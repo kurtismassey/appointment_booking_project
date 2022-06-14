@@ -40,14 +40,14 @@ function CheckSlots(appointmentDay) {
     const id = "REPLACE WITH GOOGLE CALENDAR ID";
     const calendar = CalendarApp.getCalendarById(id);
     let eventsList = calendar.getEvents(startTime, endTime);
-    let sTHM =
+    let slotTimeHourMinutes =
       padTo2Digits(startTime.getHours()) +
       ":" +
       padTo2Digits(startTime.getMinutes());
     if (!eventsList.length == false) {
-      notAvailable.push(sTHM);
+      notAvailable.push(slotTimeHourMinutes);
     } else {
-      slotsAvailable.push(sTHM);
+      slotsAvailable.push(slotTimeHourMinutes);
       return slotsAvailable;
     }
   });
