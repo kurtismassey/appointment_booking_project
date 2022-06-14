@@ -6,7 +6,7 @@ function doGet(e) {
 }
 
 function CheckSlots(appointmentDay) {
-  const s = [
+  const startingTime = [
     "09:00",
     "09:40",
     "11:00",
@@ -16,7 +16,7 @@ function CheckSlots(appointmentDay) {
     "15:40",
     "16:20",
   ];
-  const e = [
+  const endingTime = [
     "09:30",
     "10:10",
     "11:30",
@@ -28,8 +28,8 @@ function CheckSlots(appointmentDay) {
   ];
   const notAvailable = [];
   const slotsAvailable = [];
-  s.forEach((start, index) => {
-    const end = e[index];
+  startingTime.forEach((start, index) => {
+    const end = endingTime[index];
     let startTime = `${appointmentDay} ${start}`;
     let endTime = `${appointmentDay} ${end}`;
     startTime = new Date(startTime);
